@@ -1,0 +1,185 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+        function myFunction() {var x = document.getElementById("myInput");
+    if (x.type === "password"){x.type = "text";}
+    else{x.type = "password";}}
+    </script>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all">
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+    <link rel="stylesheet" href="css/style1.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/font-awesome.css" type="text/css" media="all">
+    <script src="vue-axios.js"></script>
+    <!-- 1.引进vue和vue-router -->
+    <style>
+        ul li{
+            display:inline-block;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="app">
+        <!-- <h1 class="title-agile text-center">欢迎登录</h1> -->
+        <ul class="text-center">
+        <!-- <li><router-link to="/content_1"><button type="button" class="btn btn-primary">登录</button></router-link></li>
+        <li><router-link to="/content_2"><button type="button" class="btn btn-primary">用户注册</button></router-link></li>
+        <li><router-link to="/content_3"></router-link></li> -->
+        
+        </ul>
+        
+        <!-- router-link标签中放定义好的路由，相当于a标签，但不同的是，a标签点击后
+        是到达另一个链接页面，router-link是将路由中绑定的组件内容输出到页面的位置上
+        -->
+        <div style="
+        width: 500px;height: 387px;position: relative;left: 500px;border: 10px solid hsla(0,0%,100%,.5);
+        background-clip: padding-box;margin: 2em;">
+            <router-view></router-view>
+            <!-- router-view这个标签中输出组件内容 -->
+        </div>
+        <div class="Footer" style="position:relative;left:450px;">
+            <div class="footer_nav">
+                <a rel="nofollow" target="_blank" href="#"style="color:white;">关于纵横游</a>&#12288;|&#12288;
+                <a rel="nofollow" target="_blank" href="#"style="color:white;">商务合作</a>&#12288;|&#12288;
+                <a target="_blank" href="#"style="color:white;">友情链接</a>&#12288;|&#12288;
+                <a rel="nofollow" target="_blank" href="#"style="color:white;">帮助中心</a>&#12288;|&#12288;
+                <a rel="nofollow" target="_blank" href="#"style="color:white;">用户守则</a>&#12288;|&#12288;
+                <a target="_blank" href="#"style="color:white;">网站地图</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const content_1 = { template: `<div><h2 class="title-agile text-center">用户登录</h2><br>
+        <form>
+        <div class="field-group"><span class="fa fa-user" aria-hidden="true">
+        </span>
+        <div class="wthree-field">
+        <input name="text1" id="text1" type="text" value="" placeholder="用户名" v-model='username' required>
+        </div></div>
+        <div class="field-group"><span class="fa fa-lock" aria-hidden="true"></span>
+        <div class="wthree-field"><input name="password" id="myInput" type="Password" v-model='password' placeholder="请输入密码">
+         </div></div><div class="field-group">
+        <div class="check"><label class="checkbox w3l">
+        <input type="checkbox" onclick="myFunction()"><i> </i>显示密码</label>
+        </div></div><div class="wthree-field">
+        <input id="saveForm" name="saveForm" type="button" @click='login' value="立即登录" />
+        </div><ul class="list-login"><li class="switch-agileits"><label class="switch">
+        <input type="checkbox"><span class="slider round"></span>记住密码</label></li><li>
+        <router-link to="/content_2"><p>立即注册</p>
+            </router-link></li><li class="clearfix">
+                </li></ul></form>
+                </div>`,
+                        data:function(){
+                            return{
+                                username:'',
+                                password:''
+                            }
+                        },
+                        methods:{
+                            login:function(){
+                                
+                                axios({
+                    method: 'post',
+                    url: '/users',
+                    data: {
+                      username:this.username,
+                      password:this.password
+                    }
+                  }).then(function(res){
+                    //   alert(res.data)
+                    if(res.data){alert('登录成功')}else{alert('登录失败')}
+                  }).catch(function (error) {
+                    console.log(error);
+                  });
+                            }
+                        } }
+    const content_2 = { template: `<div><h2 class="title-agile text-center">用户注册</h2><br>
+        <form><div class="field-group">
+            <span class="fa fa-user" aria-hidden="true"></span>
+            <div class="wthree-field"><input name="text1" id="text1" type="text" v-model='username' placeholder="用户名" required></div></div>
+            <div class="field-group">
+            <span class="fa fa-lock" aria-hidden="true"></span>
+            <div class="wthree-field"><input name="password" id="myInput" type="Password" v-model='password' placeholder="请输入密码"></div></div>
+            <div class="field-group"><span class="" aria-hidden="true"></span><div class="wthree-field">
+            </div></div><div class="field-group">
+            <div class="check"><label class="checkbox w3l"><input type="checkbox" onclick="myFunction()"><i> </i>显示密码</label>
+             </div>
+             </div>
+             <div class="wthree-field">
+                <input id="saveForm" name="saveForm" type="button" @click='adduser' value="立即登录" />
+            </div>
+             <ul class="list-login"><li class="switch-agileits"><label class="switch"><input type="checkbox"><span class="slider round">
+            </span>记住密码</label></li> <li><router-link to="/content_1">
+          <span>登录</span></router-link></li><li class="clearfix"></li></ul></form></div>`,
+                        data:function(){
+                            return{
+                                username:'',
+                                password:''
+                            }
+                        },
+                        methods:{
+                            adduser:function(){
+                                
+                                var myDate = new Date();
+                    var year = myDate.getFullYear(); //获取当前年
+                    var mon = myDate.getMonth() + 1; //获取当前月
+                     var date = myDate.getDate();
+                    var nowtime=year+'-'+mon+'-'+date
+
+                                axios({
+                    method: 'post',
+                    url: '/users/adduser',
+                    data: {
+                      username:this.username,
+                      password:this.password,
+                      nowtime:nowtime
+                    }
+                  }).then(function(res){
+                    //   alert(res.data)
+                    if(res.data){alert('注册成功')}else{
+                        alert('注册失败')}
+                  }).catch(function (error) {
+                    console.log(error);
+                  });
+                            }
+                        }
+                                
+                                }
+    // const content_3 = { template: '<div>我是内容3<br>\
+    //                         <input type="text" value="我是内容3"><br>\
+    //                         <input type="button" value="我是内容3"><br></div>'}
+    //定义3个组件
+
+    const routes = [
+      { path: '/content_1', component: content_1 },
+  { path: '/content_2', component: content_2 },
+  {
+        path: '/', 
+        redirect: '/content_2' 
+    }
+//   { path: '/content_3', component: content_3 }
+]//创建3个路由，并将想要的组件映射到该路由
+
+    const router = new VueRouter({
+  routes 
+})//创建路由器实例
+    const app = new Vue({
+  router
+}).$mount('#app')
+//创建vue实例，将路由挂载上去
+</script>
+</html>

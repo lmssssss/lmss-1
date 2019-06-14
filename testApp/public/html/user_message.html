@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF8MB4">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户中心</title>
+    <link rel="stylesheet" href="lib/bootstrap-3.3.7.css">
+    <link rel="stylesheet" href="css/user_message.css">
+    <link rel="shortcut icon" href="img/bbb.png">
+    <script src="lib/vue.js"></script>
+    <script src="lib/vue-router.js"></script>
+    <script src="lib/vue-axios.js"></script>
+</head>
+
+<body>
+
+
+
+    <div id="main">
+        <div id="header"><img src="img/logo.png">
+            <div class="person">
+                <ul class="person_biao" >
+                    <li>
+                        <ul class="person_biao_next">
+                            {{ul_content}}
+                            <li v-for="(leftarry,index) in leftArry" @click="change_ul(index)">
+                            <router-link :to={path:'/'+leftarry.url} tag='span'>
+                            {{leftarry.name}}
+                            </router-link>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>   
+            </div>
+            <div class="firstPage">首页</div>
+        </div>
+    
+        <div class="l-main" id="a_main">
+            <div class="menu">
+                <header class="menu__header">
+                    <h1 class="menu__header-title">用户中心</h1>     
+                </header>
+                <div class="menu__body">
+                    <ul class="nav">
+                        <li class="nav__item nav__item-link " v-for="(leftarry,index) in leftArry" 
+                        @click="change(index) " 
+                        :class="{is_active:decideIndex===index}">
+                        
+                        <router-link :to={path:'/'+leftarry.url} tag='div' 
+                        active-class="menu_width">
+
+                        <i class=" nav__item-icon">{{leftarry.fuhao}}</i>
+                        <span class="nav__item-text" >{{leftarry.name}}</span>
+
+                        </router-link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 左列表 -->
+
+
+        <div id="rightbody" class="rightbody">
+            <router-view></router-view>
+            
+        </div>
+
+
+    </div>
+</body>
+<script src="js/user_message.js" ></script>
+
+
+</html>

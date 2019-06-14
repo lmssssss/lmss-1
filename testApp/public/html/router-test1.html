@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="lib/vue.js"></script>
+    <script src="lib/vue-router.js"></script>
+    <!-- 1.引进vue和vue-router -->
+    
+    <style>
+        ul li{
+            display:inline-block;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="app">
+        <p>hello router</p>
+        <ul>
+        <li><router-link to="/content_1"><button>go to content_1</button></router-link></li>
+        <li><router-link to="/content_2"><h1>content_3</h1></router-link></li></li>
+        <li><router-link to="/content_3"><input value="content_3" type="text" ></router-link></li>
+        </ul> 
+        
+         <!-- router-link标签中放定义好的路由，相当于a标签，但不同的是，a标签点击后  
+        是到达另一个链接页面，router-link是将路由中绑定的组件内容输出到页面的位置上
+        -->
+        <div style="border:brown solid 2px;">
+            <router-view></router-view>
+            <!-- router-view这个标签中输出组件内容 --> 
+        </div>
+       
+    <script type="module" src="export/export.js" >
+    </script>
+</body>
+
+
+</html>
+  

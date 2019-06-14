@@ -1,0 +1,122 @@
+-- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
+--
+-- Host: localhost    Database: navol
+-- ------------------------------------------------------
+-- Server version	8.0.15
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+ SET NAMES utf8mb4 ;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `article_section`
+--
+
+DROP TABLE IF EXISTS `article_section`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `article_section` (
+  `user_Name` varchar(12) NOT NULL,
+  `article_Id` int(11) DEFAULT NULL,
+  `section_Id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `section_Time` date NOT NULL,
+  `section_Name` varchar(20) NOT NULL,
+  `section_content` mediumtext,
+  PRIMARY KEY (`section_Id`),
+  KEY `article_Id` (`article_Id`),
+  CONSTRAINT `article_section_ibfk_1` FOREIGN KEY (`article_Id`) REFERENCES `users_article` (`article_Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `article_section`
+--
+
+LOCK TABLES `article_section` WRITE;
+/*!40000 ALTER TABLE `article_section` DISABLE KEYS */;
+INSERT INTO `article_section` VALUES ('张洋',1,1,'2019-05-11','第一章','这是文章的内容，测试中哈哈哈哈'),('张洋',4,2,'2342-03-23','第一章','测试章节'),('张洋',5,3,'2342-03-23','第一章','测试章节'),('张洋',5,4,'2342-03-23','第一章','测试章节'),('张洋',5,5,'2342-03-23','第一章','测试章节'),('张洋',5,6,'2342-03-23','第一章','测试章节'),('张洋',5,7,'2342-03-23','第一章','测试章节'),('张洋',5,8,'2342-03-23','第一章','测试章节'),('张洋',5,9,'2342-03-23','第一章','测试章节'),('张洋',5,10,'2342-03-23','第一章','测试章节'),('张洋',7,11,'2342-03-23','第一章','测试章节'),('张洋',8,12,'2342-03-23','第一章','测试章节'),('张洋',9,13,'2019-05-13','是','测试章节'),('张洋',10,14,'2019-05-13','21312','萨芬'),('张洋',10,15,'2019-05-13','21312','萨芬'),('张洋',10,16,'2019-05-13','我去饿','131请问'),('张洋',11,17,'2019-05-14','1231','wqrqwr'),('张洋',12,18,'2019-05-14','124124','2131'),('张洋',13,19,'2019-05-14','',''),('张洋',13,20,'2019-05-14','',''),('张洋',13,21,'2019-05-14','',''),('张洋',14,22,'2019-05-14','第一章','测试中'),('张洋',13,23,'2019-05-18','',''),('张洋',13,24,'2019-05-18','',''),('张洋',15,25,'2019-05-22','213123','123214'),('123',10,26,'2019-05-23','213','213');
+/*!40000 ALTER TABLE `article_section` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users_article`
+--
+
+DROP TABLE IF EXISTS `users_article`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `users_article` (
+  `user_Id` int(11) DEFAULT NULL,
+  `user_Name` varchar(12) NOT NULL,
+  `article_Id` int(11) NOT NULL,
+  `article_Time` date NOT NULL,
+  `article_Name` varchar(20) NOT NULL,
+  `article_num` int(20) DEFAULT '0',
+  `article_Type` varchar(20) NOT NULL,
+  PRIMARY KEY (`article_Id`),
+  KEY `user_Id` (`user_Id`),
+  CONSTRAINT `users_article_ibfk_1` FOREIGN KEY (`user_Id`) REFERENCES `users_personal` (`user_Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users_article`
+--
+
+LOCK TABLES `users_article` WRITE;
+/*!40000 ALTER TABLE `users_article` DISABLE KEYS */;
+INSERT INTO `users_article` VALUES (1,'张洋',1,'2019-05-11','哈哈',3,''),(0,'张洋',2,'2342-03-23','哈哈',0,''),(0,'张洋',3,'2342-03-23','哈哈',0,''),(0,'张洋',4,'2342-03-23','哈多次哈',10,''),(0,'张洋',5,'2342-03-23','哈多哈',0,''),(1,'张洋',6,'2019-05-11','哈哈',0,'玄幻'),(0,'张洋',7,'2342-03-23','asd',0,'玄幻'),(0,'张洋',8,'2342-03-23','as',0,'玄幻'),(0,'张洋',9,'2019-05-13','这个',0,'仙侠'),(0,'张洋',10,'2019-05-13','123',0,'玄幻'),(0,'张洋',11,'2019-05-14','qwe',0,'仙侠'),(0,'张洋',12,'2019-05-14','124让我确认',0,''),(0,'张洋',13,'2019-05-14','',0,''),(0,'张洋',14,'2019-05-14','斗破苍穹',0,'仙侠'),(0,'张洋',15,'2019-05-22','123123',0,'玄幻');
+/*!40000 ALTER TABLE `users_article` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users_personal`
+--
+
+DROP TABLE IF EXISTS `users_personal`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `users_personal` (
+  `user_Id` int(11) NOT NULL,
+  `user_Name` varchar(12) NOT NULL,
+  `user_Password` char(20) NOT NULL,
+  `user_RegistrationTime` date NOT NULL,
+  `user_Email` char(50) DEFAULT NULL,
+  `user_BriefIntroduction` varchar(200) DEFAULT NULL,
+  `user_YouIntegral` char(100) DEFAULT '100',
+  `user_YouMoney` char(100) DEFAULT '100',
+  `user_PayId` char(20) DEFAULT NULL,
+  `user_PayName` varchar(20) DEFAULT NULL,
+  `user_PayNum` int(20) DEFAULT '0',
+  `user_CashStatus` int(1) DEFAULT '0',
+  PRIMARY KEY (`user_Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users_personal`
+--
+
+LOCK TABLES `users_personal` WRITE;
+/*!40000 ALTER TABLE `users_personal` DISABLE KEYS */;
+INSERT INTO `users_personal` VALUES (0,'张洋','123456','2000-10-06','1477037684@qq.com','乐观向上\n','1631','1598.3690000000001','1213123','123',402,1),(1,'黄冈','123455','2000-10-06',NULL,NULL,'103','30','qwewqe','213213',70,1),(2,'黄冈','123455','2000-10-06',NULL,NULL,'100','30','qwewqe','213213',70,1),(3,'黄冈','123455','2000-10-06',NULL,NULL,'100','30','qwewqe','213213',70,1),(4,'黄冈','123455','2000-10-06',NULL,NULL,'100','30','qwewqe','213213',70,1),(5,'黄冈','123455','2000-10-06',NULL,NULL,'100','30','qwewqe','213213',70,1),(6,'黄冈','123455','2000-10-06',NULL,NULL,'100','30','qwewqe','213213',70,1),(7,'黄冈','123455','2000-10-06',NULL,NULL,'100','30','qwewqe','213213',70,1),(8,'黄冈','123455','2000-10-06',NULL,NULL,'100','30','qwewqe','213213',70,1),(9,'黄冈','123455','2000-10-06',NULL,NULL,'100','30','qwewqe','213213',70,1),(10,'黄冈','123455','2000-10-06',NULL,NULL,'100','30','qwewqe','213213',70,1),(11,'黄冈','123455','2000-10-06',NULL,NULL,'100','30','qwewqe','213213',70,1),(12,'法傅','dsfewv','2342-03-23',NULL,NULL,'100','90','阿迪斯','阿斯顿',10,1),(13,'法saf','dsfewv','2342-03-23',NULL,NULL,'100','100',NULL,NULL,0,0),(14,'saf','dsfewv','2342-03-23','1477037684@qq.com','简介','100','42','123','213',58,1),(16,'sqvfgaf','dsfewv','2342-03-23',NULL,NULL,'100','100',NULL,NULL,0,0),(17,'213','14124','2019-05-06',NULL,NULL,'100','100',NULL,NULL,0,0),(18,'21第三个','143','2019-05-06',NULL,NULL,'100','100',NULL,NULL,0,0),(19,'','','2019-05-06',NULL,NULL,'100','100',NULL,NULL,0,0),(20,'黄辉','123456','2019-05-07',NULL,NULL,'100','100',NULL,NULL,0,0),(21,'李茂松','123456','2019-05-07',NULL,NULL,'-100','-30','10','李茂松',1030,1),(22,'鲜士豪','123456','2019-05-07',NULL,NULL,'100','60','123456','鲜士豪',40,1),(23,'鲜士','123r34234','2019-05-07',NULL,NULL,'100','100',NULL,NULL,0,0),(24,'张','123456','2019-05-07',NULL,NULL,'100','100',NULL,NULL,0,0),(25,'wqe','123','2019-05-07',NULL,NULL,'100','100',NULL,NULL,0,0),(26,'我是谁','123456789csfas','2331-01-12',NULL,NULL,'100','100',NULL,NULL,0,0),(27,'我是谁','123456789csfas','2331-01-12',NULL,NULL,'100','100',NULL,NULL,0,0),(28,'我是谁','123456789csfas','2331-01-12',NULL,NULL,'100','100',NULL,NULL,0,0),(29,'我是谁','123456789csfas','2331-01-12',NULL,NULL,'100','100',NULL,NULL,0,0),(30,'21312','12dqw','2019-05-13',NULL,NULL,'100','38','123124','1211',30,1),(31,'123','1232','2019-05-14','Email','请输入你的个人介绍请问qwewqe','13','0.08599999999999096','32131','张洋',43,1),(32,'123344','123','2019-05-14',NULL,NULL,'100','100',NULL,NULL,0,0),(33,'gqsqv','312412','2019-05-16',NULL,NULL,'100','100',NULL,NULL,0,0),(34,'a123456','123456','2019-05-28',NULL,NULL,'100','100',NULL,NULL,0,0);
+/*!40000 ALTER TABLE `users_personal` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-06-02 15:05:54
