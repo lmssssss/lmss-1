@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+} */
+
+#banner {
+    width: 520px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#banner:hover>.spanner_arrow #pre {
+    background-color: rgba(10, 10, 10, 0.3);
+}
+
+#banner:hover>.spanner_arrow #next {
+    background-color: rgba(10, 10, 10, 0.3);
+}
+
+#banner_imgs {
+    width: 3640px;
+    height: 300px;
+    position: absolute;
+}
+
+#banner_imgs img {
+    width: 520px;
+    height: 300px;
+    float: left;
+    position: relative;
+}
+
+.banner_buttons {
+    position: absolute;
+    width: 520px;
+    text-align: center;
+    bottom: 5px;
+    left: 0px;
+}
+
+.banner_buttons span {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(20, 20, 20, 0.3);
+    display: inline-block;
+    border-radius: 20px;
+    margin: 2px 5px;
+}
+
+.banner_buttons .on {
+    background-color: #F63;
+}
+
+#pre {
+    width: 50px;
+    height: 50px;
+    float: left;
+    background-color: rgba(10, 10, 10, 0.1);
+    text-align: center;
+    line-height: 50px;
+    color: #FFF;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 150px;
+}
+
+#next {
+    width: 50px;
+    height: 50px;
+    float: right;
+    background-color: rgba(10, 10, 10, 0.1);
+    text-align: center;
+    line-height: 50px;
+    color: #FFF;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 150px;
+}

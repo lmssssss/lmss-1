@@ -1,0 +1,132 @@
+/* 整体设置 */
+a {
+  text-decoration: none;
+}
+
+/* 页面头部 */
+#header {
+  width: 1024px;
+  height: 130px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  margin: auto;
+  margin-top: -30px;
+}
+
+#logo {
+  float: left;
+  margin-left: 70px;
+  margin-top: 25px;
+}
+
+#logo img {
+  width: 170px;
+  height: 65px;
+}
+
+#search {
+  float: left;
+  margin-left: 90px;
+  margin-top: 22px;
+  position: relative;
+}
+
+#search-input {
+  width: 240px;
+  height: 30px;
+}
+
+#search img {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: -3px;
+  left: 250px;
+}
+
+#load {
+  float: left;
+  margin-left: 900px;
+  margin-top: -40px;
+}
+
+#load a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: white;
+}
+
+#nav {
+  position: absolute;
+  top: 55px;
+  left: 370px;
+}
+
+/* #nav ul li{
+    font-size: 20px;
+    padding: 60px;
+    display: inline;
+    text-decoration:none;
+    list-style-type:none;
+} */
+/* 页面主体 */
+#centent {
+  width: 940px;
+  height: 550px;
+  background-color: aliceblue;
+  border: 2px soild lightblue;
+  margin: auto;
+  position: relative;
+}
+
+.top {
+  font-size: 24px;
+  position: absolute;
+  top: 50px;
+  left: 60px;
+}
+
+ul {
+  width: 940px;
+  position: absolute;
+  top:90px;
+  left:50px;
+}
+
+li {
+  display: block;
+  margin: 10px;
+  width: 120px;
+  float: left;
+  text-align: center;
+}
+
+/* 页面底部 */
+#footer {
+  float: left;
+  margin-left: 150px;
+  margin-top: 20px;
+  width: 1024px;
+  height: 50px;
+  border-color: lightcyan;
+  border: 2px solid lightblue;
+}
+
+#footer img {
+  float: left;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+#footer a {
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+#footer span {
+  float: left;
+  margin-left: 460px;
+}

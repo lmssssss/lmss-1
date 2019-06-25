@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": "G:\\Test"
+		},
+		{
+			"path": "G:\\vue基础"
+		},
+		{
+			"path": "G:\\javascipt框架"
+		},
+		{
+			"path": "G:\\Express"
+		},
+		{
+			"path": "G:\\网站代码"
+		},
+		{
+			"path": "G:\\vue概论"
+		},
+		{
+			"path": "G:\\testApp"
+		},
+		{
+			"path": "C:\\Users\\Administrator\\Desktop\\XSH"
+		},
+		{
+			"path": "G:\\newMyproj"
+		},
+		{
+			"path": "G:\\okText"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "javascipt框架"
+	}
+}

@@ -1,0 +1,226 @@
+/* 整体设置 */
+a{
+    text-decoration: none;
+}
+.button:hover { background-color: #111; color: #fff; }
+/* 页面头部 */
+#header{
+    width: 1024px;
+    height: 130px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;   
+    margin: auto;
+    margin-top: -30px;
+    position: relative;
+}
+#logo{
+    float: left;
+    margin-left: 70px;
+    margin-top: 25px;
+}
+#logo img{
+    width:170px;
+    height: 65px;
+}
+#search{
+    float: left;
+    margin-left: 180px;
+    margin-top: 45px;
+    position: relative;
+}
+#search-input{
+    width: 240px;
+    height:30px;
+}
+#search img{
+    position: absolute;
+    width:40px;
+    height:40px;
+    top:-3px;
+    left:250px;
+}
+.load{
+    float: left;
+    margin-left: 900px;
+    margin-top: -40px;
+    cursor: pointer;
+}
+#load a{
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color:white;
+}
+#nav{  
+    position: absolute;
+    top:85px;
+    left:200px;
+}
+/* #nav ul li{
+    font-size: 20px;
+    padding: 60px;
+    display: inline;
+    text-decoration:none;
+    list-style-type:none;
+} */
+
+/* 页面主体 */
+
+#centent{
+    width: 1024px;
+    height: 550px;
+    margin: auto;
+}
+#booktype{
+    float: left;
+    margin-left: 0px;
+    margin-top: 20px;
+    width: 230px;
+    height: 290px;
+    position: relative;
+}
+.booktype{
+    font-size: 24px;
+}
+h2{
+    float: left;
+    margin-left: 42px;
+    letter-spacing:8px;
+}
+#booktype ul{
+    position: absolute;
+    width: 220px;   
+    left: -5px;
+    top:50px;
+}
+#booktype ul li{
+    text-indent: 33px;
+    letter-spacing:15px;
+    list-style-type:none;
+    font-size: 20px;
+    padding: 10px;
+    line-height: 10px;
+}
+#booktype ul li a{
+    text-decoration: none;
+}
+#circul{
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    
+}
+#ranking{
+    clear: both;
+    width: 300px;
+    height: 280px;
+    float: left;
+    margin-left: 865px;
+    margin-top: -290px;
+    position: relative;
+}
+h3{
+    position: absolute;
+    top:-10px;
+    right:180px;
+    letter-spacing:12px;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.ranking{
+    font-size: 24px;
+}
+#ranking ul{
+    display: inline-block;
+    width: 200px;
+    font-size: 20px;
+    position: absolute;
+    left: -45px;
+    top:40px;
+}
+#ranking ul li{
+    line-height: 45px;
+    list-style-type:none;
+    text-indent: 5px;
+    letter-spacing:15px;
+    text-align: center;
+}
+#booktop{
+    clear: both;
+    float: left;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+#bookrcm{
+    clear: both;
+    float: left;
+    margin-left: 280px;
+    margin-top: -215px;
+    width: 160px;
+    height: 150px;
+}
+#newbook{
+    float: left;
+    margin-left: 550px;
+    margin-top: -215px;
+    width: 160px;
+    height: 150px;
+}
+p{
+    line-height: 25px;
+}
+#forum{
+    clear: left;
+    float: left;
+    margin-left: 840px;
+    margin-top: -215px;
+    width: 160px;
+    height: 150px;
+}
+
+/* 页面底部 */
+#footer{
+    float: left;
+    margin-left: 240px;
+    margin-top: 0px;
+    width: 1024px;
+    height: 50px;
+    border-color: lightcyan;
+    border: 2px solid lightblue;
+}
+#footer img{
+    float: left;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+#footer a{
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+h5{
+    float: left;
+    margin-left: 460px;
+    margin-top: 17px;
+}

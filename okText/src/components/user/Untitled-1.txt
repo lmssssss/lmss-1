@@ -1,0 +1,5 @@
+-- SELECT * from users_personal
+-- delete  from users_personal;
+-- update  `users_personal` set `user_PayNum`='0' where `user_PayNum` is null 
+-- alter table users_personal modify column user_PayNum int(20) default 0;
+select  article_Name from users_article order by article_Time DESCm 
